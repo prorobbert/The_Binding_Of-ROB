@@ -33,6 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="sfmlnet-audio-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-system-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\sfmlnet-system-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\sfmlnet-window-2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,12 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -72,24 +83,118 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sprites\Player\Player1.gch" />
+    <None Include="Sprites\Terrain\naamloos.tmx" />
+    <None Include="Sprites\Terrain\TestMap.tmx" />
+    <None Include="Sprites\Terrain\TestMap_Tilelaag 1.csv" />
+    <None Include="Sprites\Terrain\TestMap_Tilelaag 2.csv" />
+    <None Include="Sprites\Terrain\TestMap_Tilelaag 3.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="csfml-audio-2.dll" />
-    <Content Include="csfml-graphics-2.dll" />
-    <Content Include="csfml-network-2.dll" />
-    <Content Include="csfml-system-2.dll" />
-    <Content Include="csfml-window-2.dll" />
-    <Content Include="libsndfile-1.dll" />
-    <Content Include="openal32.dll" />
-    <Content Include="OpenTK.Compatibility.dll" />
-    <Content Include="OpenTK.dll" />
+    <Content Include="csfml-audio-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-graphics-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-network-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-system-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-window-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libsndfile-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="openal32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenTK.Compatibility.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenTK.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="sfmlnet-audio-2.dll" />
     <Content Include="sfmlnet-graphics-2.dll" />
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
+    <Content Include="Sprites\Player\Player1.png" />
+    <Content Include="Sprites\Terrain\ArtistInfo.png" />
+    <Content Include="Sprites\Terrain\Attribution.txt" />
+    <Content Include="Sprites\Terrain\Attribution1.txt" />
+    <Content Include="Sprites\Terrain\barrel.png" />
+    <Content Include="Sprites\Terrain\base_out_atlas.png" />
+    <Content Include="Sprites\Terrain\brackish.png" />
+    <Content Include="Sprites\Terrain\bridges.png" />
+    <Content Include="Sprites\Terrain\buckets.png" />
+    <Content Include="Sprites\Terrain\cabinets.png" />
+    <Content Include="Sprites\Terrain\Castle.png" />
+    <Content Include="Sprites\Terrain\Castle2.png" />
+    <Content Include="Sprites\Terrain\CastleExample.png" />
+    <Content Include="Sprites\Terrain\castlefloors.png" />
+    <Content Include="Sprites\Terrain\castlefloors_outside.png" />
+    <Content Include="Sprites\Terrain\castlewalls.png" />
+    <Content Include="Sprites\Terrain\castle_lightsources.png" />
+    <Content Include="Sprites\Terrain\castle_outside.png" />
+    <Content Include="Sprites\Terrain\cement.png" />
+    <Content Include="Sprites\Terrain\cementstair.png" />
+    <Content Include="Sprites\Terrain\chests.png" />
+    <Content Include="Sprites\Terrain\cottage.png" />
+    <Content Include="Sprites\Terrain\country.png" />
+    <Content Include="Sprites\Terrain\cup.png" />
+    <Content Include="Sprites\Terrain\dirt.png" />
+    <Content Include="Sprites\Terrain\dirt2.png" />
+    <Content Include="Sprites\Terrain\dungeon.png" />
+    <Content Include="Sprites\Terrain\forest_tiles.png" />
+    <Content Include="Sprites\Terrain\grass.png" />
+    <Content Include="Sprites\Terrain\grassalt.png" />
+    <Content Include="Sprites\Terrain\hole.png" />
+    <Content Include="Sprites\Terrain\holek.png" />
+    <Content Include="Sprites\Terrain\holemid.png" />
+    <Content Include="Sprites\Terrain\house.png" />
+    <Content Include="Sprites\Terrain\hyptosis_sprites-and-tiles-for-you.png" />
+    <Content Include="Sprites\Terrain\hyptosis_til-art-batch-2.png" />
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-1.png" />
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-3.png" />
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-4.png" />
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-5.png" />
+    <Content Include="Sprites\Terrain\inside.png" />
+    <Content Include="Sprites\Terrain\kitchen.png" />
+    <Content Include="Sprites\Terrain\lava.png" />
+    <Content Include="Sprites\Terrain\lavarock.png" />
+    <Content Include="Sprites\Terrain\mountains.png" />
+    <Content Include="Sprites\Terrain\rock.png" />
+    <Content Include="Sprites\Terrain\signs.png" />
+    <Content Include="Sprites\Terrain\stairs.png" />
+    <Content Include="Sprites\Terrain\stone-bridge.png" />
+    <Content Include="Sprites\Terrain\stone-bridge2.png" />
+    <Content Include="Sprites\Terrain\terrain.png" />
+    <Content Include="Sprites\Terrain\terrain_atlas.png" />
+    <Content Include="Sprites\Terrain\terrain_test.png" />
+    <Content Include="Sprites\Terrain\thatched-roof.png" />
+    <Content Include="Sprites\Terrain\town.png" />
+    <Content Include="Sprites\Terrain\trees.png" />
+    <Content Include="Sprites\Terrain\trees_plants.png" />
+    <Content Include="Sprites\Terrain\trees_plants_rocks.png" />
+    <Content Include="Sprites\Terrain\treetop.png" />
+    <Content Include="Sprites\Terrain\trunk.png" />
+    <Content Include="Sprites\Terrain\victoria.png" />
+    <Content Include="Sprites\Terrain\water.png" />
+    <Content Include="Sprites\Terrain\waterfall.png" />
+    <Content Include="Sprites\Terrain\watergrass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Map\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Sprites\Terrain\Terrain.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

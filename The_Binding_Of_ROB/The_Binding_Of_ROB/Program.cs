@@ -14,9 +14,8 @@ namespace The_Binding_Of_ROB
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Game game = new Game();
+            game.Start();
         }
     }
 }
