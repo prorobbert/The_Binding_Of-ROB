@@ -22,7 +22,7 @@ namespace The_Binding_Of_ROB
             int tilemapHeight = 32;
             int tileSize = 32;
 
-            Texture texture = new Texture(@"C:\Users\Robbert\SkyDrive\The_Binding_Of_ROB\The_Binding_Of_ROB\The_Binding_Of_ROB\Sprites\Terrain\terrain_atlas.png");
+            Texture texture = new Texture(@"Sprites\Terrain\terrain_atlas.png");
             Sprite[] tilemap = new Sprite[tilemapWidth * tilemapHeight];
 
             for(int y = 0; y < tilemapHeight; y++)
@@ -35,17 +35,17 @@ namespace The_Binding_Of_ROB
             }
 
             tiles1 = new Sprite[mapWidth, mapHeight];
-            StreamReader readLayer1 = new StreamReader(@"C:\Users\Robbert\SkyDrive\The_Binding_Of_ROB\The_Binding_Of_ROB\The_Binding_Of_ROB\Maps\TestMap_Tilelaag 1.csv");
+            StreamReader readLayer1 = new StreamReader(@"Maps\TestMap_Tilelaag 1.csv");
             reading(readLayer1, tilemap, tileSize, tiles1);
             readLayer1.Close();
 
             tiles2 = new Sprite[mapWidth, mapHeight];
-            StreamReader readLayer2 = new StreamReader(@"C:\Users\Robbert\SkyDrive\The_Binding_Of_ROB\The_Binding_Of_ROB\The_Binding_Of_ROB\Maps\TestMap_Tilelaag 2.csv");
+            StreamReader readLayer2 = new StreamReader(@"Maps\TestMap_Tilelaag 2.csv");
             reading(readLayer2, tilemap, tileSize, tiles2);
             readLayer2.Close();
 
             tiles3 = new Sprite[mapWidth, mapHeight];
-            StreamReader readLayer3 = new StreamReader(@"C:\Users\Robbert\SkyDrive\The_Binding_Of_ROB\The_Binding_Of_ROB\The_Binding_Of_ROB\Maps\TestMap_Tilelaag 3.csv");
+            StreamReader readLayer3 = new StreamReader(@"Maps\TestMap_Tilelaag 3.csv");
             reading(readLayer3, tilemap, tileSize, tiles3);
             readLayer2.Close();
         }
