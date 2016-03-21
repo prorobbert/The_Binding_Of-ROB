@@ -17,12 +17,17 @@ namespace The_Binding_Of_ROB
             window.Closed += Window_Closed;
 
             //hier gaan we alles in laden en instellen
+            Map map = new Map();
+
 
             while(window.IsOpen)
                 {
                 window.DispatchEvents();
 
                 //hier gaan we elk frame logica en tekencode aanroepen
+                map.Draw(window, 1);
+                map.Draw(window, 2);
+                map.Draw(window, 3);
 
                 window.Display();
                 }
