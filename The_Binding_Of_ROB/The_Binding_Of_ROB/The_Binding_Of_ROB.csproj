@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,11 +85,21 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Sprites\Player\Player1.gch" />
-    <None Include="Sprites\Terrain\naamloos.tmx" />
-    <None Include="Sprites\Terrain\TestMap.tmx" />
-    <None Include="Sprites\Terrain\TestMap_Tilelaag 1.csv" />
-    <None Include="Sprites\Terrain\TestMap_Tilelaag 2.csv" />
-    <None Include="Sprites\Terrain\TestMap_Tilelaag 3.csv" />
+    <None Include="Sprites\Terrain\naamloos.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprites\Terrain\TestMap.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\TestMap_Tilelaag 1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\TestMap_Tilelaag 2.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\TestMap_Tilelaag 3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -126,75 +137,198 @@
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
     <Content Include="Sprites\Player\Player1.png" />
-    <Content Include="Sprites\Terrain\ArtistInfo.png" />
-    <Content Include="Sprites\Terrain\Attribution.txt" />
-    <Content Include="Sprites\Terrain\Attribution1.txt" />
-    <Content Include="Sprites\Terrain\barrel.png" />
-    <Content Include="Sprites\Terrain\base_out_atlas.png" />
-    <Content Include="Sprites\Terrain\brackish.png" />
-    <Content Include="Sprites\Terrain\bridges.png" />
-    <Content Include="Sprites\Terrain\buckets.png" />
-    <Content Include="Sprites\Terrain\cabinets.png" />
-    <Content Include="Sprites\Terrain\Castle.png" />
-    <Content Include="Sprites\Terrain\Castle2.png" />
-    <Content Include="Sprites\Terrain\CastleExample.png" />
-    <Content Include="Sprites\Terrain\castlefloors.png" />
-    <Content Include="Sprites\Terrain\castlefloors_outside.png" />
-    <Content Include="Sprites\Terrain\castlewalls.png" />
-    <Content Include="Sprites\Terrain\castle_lightsources.png" />
-    <Content Include="Sprites\Terrain\castle_outside.png" />
-    <Content Include="Sprites\Terrain\cement.png" />
-    <Content Include="Sprites\Terrain\cementstair.png" />
-    <Content Include="Sprites\Terrain\chests.png" />
-    <Content Include="Sprites\Terrain\cottage.png" />
-    <Content Include="Sprites\Terrain\country.png" />
-    <Content Include="Sprites\Terrain\cup.png" />
-    <Content Include="Sprites\Terrain\dirt.png" />
-    <Content Include="Sprites\Terrain\dirt2.png" />
-    <Content Include="Sprites\Terrain\dungeon.png" />
-    <Content Include="Sprites\Terrain\forest_tiles.png" />
-    <Content Include="Sprites\Terrain\grass.png" />
-    <Content Include="Sprites\Terrain\grassalt.png" />
-    <Content Include="Sprites\Terrain\hole.png" />
-    <Content Include="Sprites\Terrain\holek.png" />
-    <Content Include="Sprites\Terrain\holemid.png" />
-    <Content Include="Sprites\Terrain\house.png" />
-    <Content Include="Sprites\Terrain\hyptosis_sprites-and-tiles-for-you.png" />
-    <Content Include="Sprites\Terrain\hyptosis_til-art-batch-2.png" />
-    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-1.png" />
-    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-3.png" />
-    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-4.png" />
-    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-5.png" />
-    <Content Include="Sprites\Terrain\inside.png" />
-    <Content Include="Sprites\Terrain\kitchen.png" />
-    <Content Include="Sprites\Terrain\lava.png" />
-    <Content Include="Sprites\Terrain\lavarock.png" />
-    <Content Include="Sprites\Terrain\mountains.png" />
-    <Content Include="Sprites\Terrain\rock.png" />
-    <Content Include="Sprites\Terrain\signs.png" />
-    <Content Include="Sprites\Terrain\stairs.png" />
-    <Content Include="Sprites\Terrain\stone-bridge.png" />
-    <Content Include="Sprites\Terrain\stone-bridge2.png" />
-    <Content Include="Sprites\Terrain\terrain.png" />
-    <Content Include="Sprites\Terrain\terrain_atlas.png" />
-    <Content Include="Sprites\Terrain\terrain_test.png" />
-    <Content Include="Sprites\Terrain\thatched-roof.png" />
-    <Content Include="Sprites\Terrain\town.png" />
-    <Content Include="Sprites\Terrain\trees.png" />
-    <Content Include="Sprites\Terrain\trees_plants.png" />
-    <Content Include="Sprites\Terrain\trees_plants_rocks.png" />
-    <Content Include="Sprites\Terrain\treetop.png" />
-    <Content Include="Sprites\Terrain\trunk.png" />
-    <Content Include="Sprites\Terrain\victoria.png" />
-    <Content Include="Sprites\Terrain\water.png" />
-    <Content Include="Sprites\Terrain\waterfall.png" />
-    <Content Include="Sprites\Terrain\watergrass.png" />
+    <Content Include="Sprites\Terrain\Attribution.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\Attribution1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\barrel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\base_out_atlas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\brackish.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\bridges.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\buckets.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\cabinets.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\Castle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\Castle2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\CastleExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\castlefloors.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\castlefloors_outside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\castlewalls.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\castle_lightsources.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\castle_outside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\cement.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\cementstair.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\chests.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\cottage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\country.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\cup.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\dirt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\dirt2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\dungeon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\forest_tiles.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\grass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\grassalt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hole.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\holek.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\holemid.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\house.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_sprites-and-tiles-for-you.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_til-art-batch-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\hyptosis_tile-art-batch-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\inside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\kitchen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\lava.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\lavarock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\mountains.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\rock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\signs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\stairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\stone-bridge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\stone-bridge2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\terrain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\terrain_atlas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\terrain_test.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\thatched-roof.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\town.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\trees.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\trees_plants.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\trees_plants_rocks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\treetop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\trunk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\victoria.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\water.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\waterfall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\Terrain\watergrass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Map\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Sprites\Terrain\Terrain.tsx" />
+    <TypeScriptCompile Include="Sprites\Terrain\Terrain.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
