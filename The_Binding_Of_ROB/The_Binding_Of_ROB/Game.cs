@@ -1,4 +1,5 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using SFML.Window;
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,19 @@ namespace The_Binding_Of_ROB
 
             //hier gaan we alles in laden en instellen
             Map map = new Map();
+            
 
+            Clock clock = new Clock();
 
             while(window.IsOpen)
                 {
                 window.DispatchEvents();
 
+                float deltaTime = clock.Restart().AsSeconds();
+
+
                 //hier gaan we elk frame logica en tekencode aanroepen
+
                 map.Draw(window, 1);
                 map.Draw(window, 2);
                 map.Draw(window, 3);
