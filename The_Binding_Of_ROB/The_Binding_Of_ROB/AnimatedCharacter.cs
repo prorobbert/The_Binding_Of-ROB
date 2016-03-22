@@ -23,7 +23,8 @@ namespace The_Binding_Of_ROB
 
         private Sprite sprite;
         private IntRect spriteRect;
-        private int frameSize;
+        private int frameWitdh;
+        private int frameHeight;
 
         public CharacterState CurrentState { get; set; }
 
@@ -36,19 +37,14 @@ namespace The_Binding_Of_ROB
         protected float moveSpeed = 50;
         protected float animationSpeed = 0.1f;
 
-        public AnimatedCharacter(string filename, int frameSize)
+        public AnimatedCharacter(string filename, int frameWitdh, int frameHeight)
         {
-            this.frameSize = frameSize;
+            this.frameWitdh = frameWitdh;
+            this.frameHeight = frameHeight;
             Texture texture = new Texture(filename);
 
-            spriteRect = new IntRect(0, 0, frameSize, frameSize);
-            sprite = new Sprite(texture, spriteRect);
-
-            //Haal dit staks weg!!
-            Anim_Up = new Animation(0, 0, 4);
-            Anim_Left = new Animation(32, 0 ,4);
-            Anim_Down = new Animation(64, 0, 4);
-            Anim_Right = new Animation(96, 0, 4);
+            spriteRect = new IntRect(0, 0, frameWitdh, frameHeight);
+            sprite = new Sprite(texture, spriteRect);            
 
             animationClock = new Clock();
         }
@@ -84,13 +80,13 @@ namespace The_Binding_Of_ROB
                 {
                     spriteRect.Top = currentAnimation.offsetTop;
 
-                    if(spriteRect.Left == (currentAnimation.numFrames -1) * frameSize)
+                    if(spriteRect.Left == (currentAnimation.numFrames - 1) * frameWitdh)
                     {
                         spriteRect.Left = 0;
                     }
                     else
                     {
-                        spriteRect.Left += frameSize;
+                        spriteRect.Left += frameWitdh;
                     }
                 }
                 animationClock.Restart();

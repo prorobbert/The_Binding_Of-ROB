@@ -64,8 +64,10 @@
   <ItemGroup>
     <Compile Include="AnimatedCharacter.cs" />
     <Compile Include="Animation.cs" />
+    <Compile Include="Chicken.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -77,6 +79,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Maps\TestMap_Tilelaag 1.csv" />
+    <None Include="Maps\TestMap_Tilelaag 2.csv" />
+    <None Include="Maps\TestMap_Tilelaag 3.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,15 +96,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Sprites\Terrain\TestMap.tmx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\TestMap_Tilelaag 1.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\TestMap_Tilelaag 2.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\TestMap_Tilelaag 3.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -141,7 +137,9 @@
     <Content Include="Sprites\Monsters\chicken_walk.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprites\Player\Player1.png" />
+    <Content Include="Sprites\Player\Player1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sprites\Terrain\Attribution.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

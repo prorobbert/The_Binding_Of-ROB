@@ -19,7 +19,10 @@ namespace The_Binding_Of_ROB
 
             //hier gaan we alles in laden en instellen
             Map map = new Map();
-            
+            View view = new View(new Vector2f(0,0), new Vector2f(800, 600));
+            Player player = new Player();
+            Chicken kip = new Chicken();
+            kip.CurrentState = CharacterState.MovingDown;
 
             Clock clock = new Clock();
 
@@ -31,10 +34,18 @@ namespace The_Binding_Of_ROB
 
 
                 //hier gaan we elk frame logica en tekencode aanroepen
+                kip.Update(deltaTime);
+                player.Update(deltaTime);
+
+                view.Center = new Vector2f(player.Xpos, player.Ypos);
+                window.SetView(view);
 
                 map.Draw(window, 1);
                 map.Draw(window, 2);
                 map.Draw(window, 3);
+
+                kip.Draw(window);
+                player.Draw(window);
 
                 window.Display();
                 }
