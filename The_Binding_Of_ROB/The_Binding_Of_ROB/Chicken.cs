@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_Binding_Of_ROB
 {
-    class Chicken : AnimatedCharacter
+    class Chicken : AnimatedCharacterWithAI
     {
         public Chicken() : base("Sprites/Monsters/Chicken_walk.png", 32, 32)
         {

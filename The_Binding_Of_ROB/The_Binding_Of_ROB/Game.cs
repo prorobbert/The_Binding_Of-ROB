@@ -20,9 +20,14 @@ namespace The_Binding_Of_ROB
             //hier gaan we alles in laden en instellen
             Map map = new Map();
             View view = new View(new Vector2f(0,0), new Vector2f(800, 600));
+
             Player player = new Player();
+
             Chicken kip = new Chicken();
-            kip.CurrentState = CharacterState.MovingDown;
+            kip.Waypoints = new List<Waypoint>();
+            kip.Waypoints.Add(new Waypoint(0, 0));
+            kip.Waypoints.Add(new Waypoint(100, 100));
+            kip.Waypoints.Add(new Waypoint(0, 100));
 
             Clock clock = new Clock();
 

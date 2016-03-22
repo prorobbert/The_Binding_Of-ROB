@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimatedCharacter.cs" />
+    <Compile Include="AnimatedCharacterWithAI.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Chicken.cs" />
     <Compile Include="Game.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Waypoint.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,9 +81,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Maps\TestMap_Tilelaag 1.csv" />
-    <None Include="Maps\TestMap_Tilelaag 2.csv" />
-    <None Include="Maps\TestMap_Tilelaag 3.csv" />
+    <None Include="Maps\TestMap_Tilelaag 1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\TestMap_Tilelaag 2.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\TestMap_Tilelaag 3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
