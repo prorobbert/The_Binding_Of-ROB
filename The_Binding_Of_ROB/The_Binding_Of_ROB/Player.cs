@@ -16,7 +16,7 @@ namespace The_Binding_Of_ROB
             Anim_Right = new Animation(96, 0, 4);
             Anim_Up = new Animation(144, 0, 4);
 
-            moveSpeed = 150;
+            moveSpeed = 500;
             animationSpeed = 0.05f;
         }
 

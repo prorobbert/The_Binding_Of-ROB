@@ -25,9 +25,11 @@ namespace The_Binding_Of_ROB
 
             Chicken kip = new Chicken();
             kip.Waypoints = new List<Waypoint>();
-            kip.Waypoints.Add(new Waypoint(0, 0));
-            kip.Waypoints.Add(new Waypoint(100, 100));
-            kip.Waypoints.Add(new Waypoint(0, 100));
+            kip.Waypoints.Add(new Waypoint(200, 200));
+            kip.Waypoints.Add(new Waypoint(400, 250));
+            kip.Waypoints.Add(new Waypoint(500, 400));
+            kip.Waypoints.Add(new Waypoint(400, 300));
+            kip.Waypoints.Add(new Waypoint(200, 250));
 
             Clock clock = new Clock();
 
@@ -46,11 +48,12 @@ namespace The_Binding_Of_ROB
                 window.SetView(view);
 
                 map.Draw(window, 1);
-                map.Draw(window, 2);
+                map.Draw(window, 2);               
                 map.Draw(window, 3);
+                player.Draw(window);
 
                 kip.Draw(window);
-                player.Draw(window);
+                
 
                 window.Display();
                 }
